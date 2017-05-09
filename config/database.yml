@@ -1,0 +1,15 @@
+development: &default
+  adapter: postgresql
+  encoding: unicode
+  database: mfl_db
+  pool: 5
+  username: mfl_db
+  password: mfl_db
+  host: <%= ENV['DATABASE_DEV'] || 'localhost'%>
+
+test:
+  <<: *default
+  database: mfl_test
+  host: <%= ENV['DATABASE_DEV'] || 'localhost'%>
+  username: mfl_test
+  password: mfl_test

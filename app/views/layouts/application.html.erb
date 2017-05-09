@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+<header>
+<nav class="navbar navbar-inverse navbar-style blue darken-1">
+  <ul id="dropdown1" class="dropdown-content">
+    <li><%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete, class: "log-out") %> </li>
+  </ul>
+  <ul id="user-name-menu" class="right" >   
+    <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown1"><div class="hide-on-med-and-down" style="display: inline-block;"><%= current_user.name.titleize%></div><i class="material-icons right" style="display: inline-block">arrow_drop_down</i></a></li>
+  </ul>  
+</nav>
+<ul id="slide-out" class="side-nav fixed">
+  <li><div class="userView">
+    <div class="background">
+    </div>
+
+  </div></li>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+</header>
+<main>
+<%= yield %>
+</main>
+</body>
+</html>
+
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+	
+
+</script>

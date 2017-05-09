@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+<nav class="navbar navbar-inverse navbar-style">
+  ...
+</nav>
+
+</header>
+<main>
+<%= yield %>
+</main>
+</body>
+</html>
+
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+	
+
+</script>

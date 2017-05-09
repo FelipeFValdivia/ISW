@@ -1,0 +1,32 @@
+version: '2'
+services:
+  db_mfl:
+    image: postgres
+    volumes:
+      - "./data/users:/var/lib/postgresql/data/pgdata"
+    environment:
+      POSTGRES_DB: mfl_db
+      POSTGRES_USER: mfl_db
+      POSTGRES_PASSWORD: mfl_db
+      PGDATA: /var/lib/postgres/data/pgdata
+
+  mfl:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    environment:
+      DATABASE_DEV: "db_mfl"
+      RAILS_ENV: "development"
+      SERVICE_NAME: "mfl"
+      SERVICE_3000_CHECK_HTTP: "/"
+      SERVICE_3000_CHECK_INTERVAL: "15s"
+      SERVICE_3000_CHECK_TIMEOUT: "1s"
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+      - "1234:1234"
+      - "8200:8200"
+    depends_on:
+      - db_mfl
+    links:
+      - db_mfl
