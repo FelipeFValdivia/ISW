@@ -23,3 +23,8 @@ Para levantar el servicio nuevamente, luego de construir, solo se elimina --buil
 ### Sobre la utilización de Test Driven Development (TDD)
 Un desarrollo realizado con TDD permite disminuir la cantidad de bugs en el sistema. Además es una metodología de desarrollo que permite entender el funcionamiento de la aplicación sólo mirando los test, dejando una aplicación que es muy limpia y que desde un principio se sabe qué debe hacer y cómo debe reaccionar frente a distintos escenarios.
 
+
+###Usuario del seed
+El usuario utiliza como correo: experto@correo.cl
+como pass: expert
+
