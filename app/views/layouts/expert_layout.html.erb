@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Myapp</title>
+  <title>MFL</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-<nav class="navbar navbar-inverse navbar-style  blue-grey">
+<nav class="navbar navbar-inverse navbar-style">
   <ul id="dropdown1" class="dropdown-content">
     <li><%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete, class: "log-out") %> </li>
   </ul>
@@ -18,19 +18,21 @@
     <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown1"><div class="hide-on-med-and-down" style="display: inline-block;"><%= current_user.name.titleize%></div><i class="material-icons right" style="display: inline-block">arrow_drop_down</i></a></li>
   </ul>  
 </nav>
-<ul id="slide-out" class="side-nav fixed">
+<ul id="slide-out" class="side-nav fixed teal lighten-5">
   <li><div class="userView">
     <div class="background">
+    <li><%= image_tag("NN.svg", class: "menu-icon hide-on-med-and-down")%></li>
       <li class="bold">  
         <%=link_to create_teacher_form_path do%>
         <i class="material-icons prefix">perm_identity</i><p class="side-nav-list">Crear profesor</p>
         <%end%>
-      </li>    
+      </li>
+
     </div>
 
   </div></li>
 </ul>
-<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+<!-- <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a> -->
 </header>
 <main>
 <%= yield %>
@@ -39,7 +41,6 @@
 </html>
 
 <script type="text/javascript">
-  $(".button-collapse").sideNav();
 	
 
 </script>

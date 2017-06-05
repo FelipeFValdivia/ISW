@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     collection do
       
     end
+    member do
+      get "/student_profile", to: "users#student_profile"
+      
+    end
   end  
   root 'index#index'
   get "/home/redirect", to: "home#redirect"

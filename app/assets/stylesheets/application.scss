@@ -20,8 +20,18 @@
 body {
 	background-color: #fafafa;
 }
+
+main {
+	padding-left: 250px;
+}
+
+.card .card-image .card-title {
+	color: #7C2890;
+}
+
 .navbar-style {
 	background-color:#2BBDAD ;
+	z-index: 999;
 }
 
 .up-padding{
@@ -29,8 +39,9 @@ body {
 }
 
 .side-nav {
-	margin-top: 67px;
+	margin-top: 65px;
 	background-color: #cfd8dc;
+	z-index: 999;
 }
 
 .nav-fixed {
@@ -39,4 +50,12 @@ body {
 
 .side-nav.fixed{
 	width: 250px;
+}
+
+.menu-icon {
+	height: 270px;
+}
+
+.card .card-content p {
+	color: #146589;
 }

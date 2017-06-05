@@ -11,7 +11,7 @@ class HomeController < ApplicationController
 	end
 
 	def normal_user_index
-		
+		redirect_to student_profile_user_path(id: current_user.id) if current_user.name.nil? 
 	end
 
 
