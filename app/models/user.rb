@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   def set_first_birth_date
   	birth_date = "1900-01-01"
+  	description = "Por favor, cuéntanos quién eres (sé creativo)"
   	
   end
 end
