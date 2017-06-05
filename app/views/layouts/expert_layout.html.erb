@@ -21,6 +21,7 @@
 <ul id="slide-out" class="side-nav fixed teal lighten-5">
   <li><div class="userView">
     <div class="background">
+    <li><%= image_tag("NN.svg", class: "menu-icon hide-on-med-and-down")%></li>
       <li class="bold">  
         <%=link_to create_teacher_form_path do%>
         <i class="material-icons prefix">perm_identity</i><p class="side-nav-list">Crear profesor</p>
@@ -40,7 +41,6 @@
 </html>
 
 <script type="text/javascript">
-  $(".button-collapse").sideNav();
 	
 
 </script>

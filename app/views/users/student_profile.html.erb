@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col s10 offset-s1">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag("NN.svg", class: "menu-icon hide-on-med-and-down")%>
+        <br>
+        <div class="row">
+        	<center>
+        		<span class="card-title col s10 offset-s1">
+        			<%= best_in_place current_user, :name, :as => :input, :place_holder => "Y dinos ¿Cómo te llamas?!", title: "haz click en mí!" %>       
+        		</span>
+        	</center>
+        </div>
+
+      </div>
+      <div class="card-content">
+      	<div class="row">
+	        <p><%=best_in_place current_user, :description, as: :textarea, place_holder: "Agrega una pequeña descripción (sé creativo)" %>
+	        </p>
+	      </div>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+</div>
+      

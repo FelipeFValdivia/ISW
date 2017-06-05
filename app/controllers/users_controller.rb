@@ -48,7 +48,12 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-
+    @user.update(user_params)
+    if @user.errors.empty?
+      redirect_to student_profile_user_path(id: current_user.id)
+    else
+      redirect_to student_profile_user_path(id: current_user), notice: "existió un error al actualizar"
+    end
   end
 
 

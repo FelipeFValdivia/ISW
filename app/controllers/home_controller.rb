@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-	def redirectnil
+	def redirect
 		render_specific_view
 	end
 	def expert_index

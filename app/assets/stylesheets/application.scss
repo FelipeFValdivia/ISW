@@ -20,6 +20,15 @@
 body {
 	background-color: #fafafa;
 }
+
+main {
+	padding-left: 250px;
+}
+
+.card .card-image .card-title {
+	color: #7C2890;
+}
+
 .navbar-style {
 	background-color:#2BBDAD ;
 	z-index: 999;
@@ -44,5 +53,9 @@ body {
 }
 
 .menu-icon {
-	height: 60px;
+	height: 270px;
+}
+
+.card .card-content p {
+	color: #146589;
 }
