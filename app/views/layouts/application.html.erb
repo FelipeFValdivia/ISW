@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Myapp</title>
+  <title>MFL</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,11 +11,12 @@
 <body>
 <header>
 <nav class="navbar navbar-inverse navbar-style blue darken-1">
+  <%= image_tag("NN.svg", class: "menu-icon hide-on-med-and-down")%>
   <ul id="dropdown1" class="dropdown-content">
     <li><%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete, class: "log-out") %> </li>
   </ul>
   <ul id="user-name-menu" class="right" >   
-    <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown1"><div class="hide-on-med-and-down" style="display: inline-block;"><%= current_user.name.titleize%></div><i class="material-icons right" style="display: inline-block">arrow_drop_down</i></a></li>
+    <li><a class="dropdown-button" data-beloworigin="true" data-activates="dropdown1"><div class="hide-on-med-and-down" style="display: inline-block;"><%=current_user.name.nil? ? "Actualiza tus datos" : current_user.name.titleize%></div><i class="material-icons right" style="display: inline-block">arrow_drop_down</i></a></li>
   </ul>  
 </nav>
 <ul id="slide-out" class="side-nav fixed">

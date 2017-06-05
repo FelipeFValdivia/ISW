@@ -22,6 +22,7 @@ body {
 }
 .navbar-style {
 	background-color:#2BBDAD ;
+	z-index: 999;
 }
 
 .up-padding{
@@ -29,8 +30,9 @@ body {
 }
 
 .side-nav {
-	margin-top: 67px;
+	margin-top: 65px;
 	background-color: #cfd8dc;
+	z-index: 999;
 }
 
 .nav-fixed {
@@ -39,4 +41,8 @@ body {
 
 .side-nav.fixed{
 	width: 250px;
+}
+
+.menu-icon {
+	height: 60px;
 }
