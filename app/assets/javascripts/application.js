@@ -22,3 +22,6 @@ $(document).ready(function() {
   jQuery(".best_in_place").best_in_place();
 });
 $(".button-collapse").sideNav();
+$(document).ready(function(){
+  $('ul.tabs').tabs();
+});

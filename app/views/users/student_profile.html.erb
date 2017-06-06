@@ -17,10 +17,17 @@
       	<div class="row">
 	        <p><%=best_in_place current_user, :description, as: :textarea, place_holder: "Agrega una pequeña descripción (sé creativo)" %>
 	        </p>
+
 	      </div>
+          <%unless current_user.learning_style.nil? %>
+            <p>Tu estilo de aprendizaje es: <%=current_user.learning_style.titleize%></p>
+
+          <%end%>        
       </div>
       <div class="card-action">
-        <a href="#">This is a link</a>
+        <%=link_to( :controller => 'surveys', :action => 'answer') do%>
+        	<p><%=current_user.learning_style.nil? ? "No olvides responder la encuesta, así podremos saber cómo ayudarte de mejor manera" : "Volver a responder encuesta"%></p>
+        <%end%> 
       </div>
     </div>
   </div>

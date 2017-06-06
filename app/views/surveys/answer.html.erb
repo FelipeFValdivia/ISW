@@ -1,0 +1,320 @@
+
+
+<div class="row">
+  <div class="col s12">
+    <div class="card ">
+      <div class="card-action">
+          <div class="col s12">
+            <ul class="tabs">
+              <li class="tab col s3"><a href="#test1">Paso 1</a></li>
+              <li class="tab col s3"><a href="#test2">Paso 2</a></li>
+              <li class="tab col s3"><a href="#test3">Paso 3</a></li>
+              <li class="tab col s3"><a href="#test4">Paso 4</a></li>
+            </ul>
+          </div>
+      </div>
+      <%= form_for :survey ,url: survey_process_answer_path, method: :post do |f| %>
+      <div class="card-content white white-text">
+        <div class="row">
+
+
+          <div id="test1" class="col s12" style="margin-top: 30px">
+            <div class="row"> 
+              <div class="col s4"> 
+                <p>1.- Cuando aprendo...</p>
+                <br>
+                <div class="row">
+                  <input id="q1_ec" name="q1_ec" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Me gusta vivir sensaciones</p> 
+                </div>
+                <div class="row">
+                  <input id="q1_or" name="q1_or" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Me gusta pensar sobre ideas</p> 
+                </div>                          
+                <div class="row">
+                  <input id="q1_ca" name="q1_ca" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Me gusta estar haciendo cosas</p> 
+                </div>  
+                <div class="row">
+                  <input id="q1_ea" name="q1_ea" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Me gusta observar y escuchar</p> 
+                </div>                                                 
+              </div>
+
+              <div class="col s4"> 
+                <p>2.- Aprendo mejor cuando...</p>
+                <br>
+                <div class="row">
+                  <input id="q2_ec" name="q2_ec" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix">Escucho y observo cuidadosamente</p> 
+                </div>
+                <div class="row">
+                  <input id="q2_or" name="q2_or" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Confío en el pensamiento lógico</p> 
+                </div>                          
+                <div class="row">
+                  <input id="q2_ca" name="q2_ca" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Confío en mi intución y sentimientos</p> 
+                </div>  
+                <div class="row">
+                  <input id="q2_ea" name="q2_ea" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Trabajo duro para lograr hacer las cosas</p> 
+                </div>
+                              
+              </div>
+              <div class="col s4"> 
+                <p>3.- Cuando estoy aprendiendo...</p>
+                <br>
+
+                <div class="row">
+                  <input id="q3_ec" name="q3_ec" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix">Tiendo a usar el razonamiento</p> 
+                </div>
+                <div class="row">
+                  <input id="q3_or" name="q3_or" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Soy responsable con lo que hago</p> 
+                </div>                          
+                <div class="row">
+                  <input id="q3_ca" name="q3_ca" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Soy callado y reservado</p> 
+                </div>  
+                <div class="row">
+                  <input id="q3_ea" name="q3_ea" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Tengo fuertes sensaciones y reacciones</p> 
+                </div>                
+                               
+              </div>                          
+            </div>
+
+
+
+          </div>
+          <div id="test2" class="col s12" style="margin-top: 30px">
+            <div class="row"> 
+              <div class="col s4"> 
+                <p>4.- Yo aprendo...</p>
+                <br>
+
+                <div class="row">
+                  <input id="q4_ec" name="q4_ec" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix">Sintiendo</p> 
+                </div>
+                <div class="row">
+                  <input id="q4_or" name="q4_or" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Haciendo</p> 
+                </div>                          
+                <div class="row">
+                  <input id="q4_ca" name="q4_ca" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Observando</p> 
+                </div>  
+                <div class="row">
+                  <input id="q4_ea" name="q4_ea" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Pensando</p> 
+                </div>                                 
+              </div>
+              <div class="col s4"> 
+                <p>5.- Cuando aprendo...</p>
+
+                <br>
+
+                <div class="row">
+                  <input id="q5_ec" name="q5_ec" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix">Estoy abierto a nuevas experiencias</p> 
+                </div>
+                <div class="row">
+                  <input id="q5_or" name="q5_or" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Observo todos los aspectos del asunto</p> 
+                </div>                          
+                <div class="row">
+                  <input id="q5_ca" name="q5_ca" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Me gusta analizar las cosas, descomponerlas en sus partes</p> 
+                </div>  
+                <div class="row">
+                  <input id="q5_ea" name="q5_ea" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Me gusta probar e intentar hacer las cosas</p> 
+                </div> 
+                               
+              </div>
+              <div class="col s4"> 
+                <p>6.- Cuando estoy aprendiendo...</p>
+                <br>
+
+                <div class="row">
+                  <input id="q6_ec" name="q6_ec" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix">Soy una persona observadora</p> 
+                </div>
+                <div class="row">
+                  <input id="q6_or" name="q6_or" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Soy una persona activa</p> 
+                </div>                          
+                <div class="row">
+                  <input id="q6_ca" name="q6_ca" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Soy una persona intuitiva</p> 
+                </div>  
+                <div class="row">
+                  <input id="q6_ea" name="q6_ea" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Soy una persona lógica</p> 
+                </div>                                 
+              </div>                          
+            </div>
+         
+          </div>
+
+          <div id="test3" class="col s12" style="margin-top: 30px">Test 3
+            <div class="row"> 
+              <div class="col s4"> 
+                <p>7.- Yo aprendo mejor de...</p>
+                <br>
+
+                <div class="row">
+                  <input id="q7_ec" name="q7_ec" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix">La observación</p> 
+                </div>
+                <div class="row">
+                  <input id="q7_or" name="q7_or" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> La relación con otras personas</p> 
+                </div>                          
+                <div class="row">
+                  <input id="q7_ca" name="q7_ca" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Las teorías racionales</p> 
+                </div>  
+                <div class="row">
+                  <input id="q7_ea" name="q7_ea" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> La oportunidad de probar y practicar</p> 
+                </div> 
+
+              </div>
+              <div class="col s4"> 
+                <p>8.- Cuando aprendo...</p>
+                <br>
+
+                <div class="row">
+                  <input id="q8_ec" name="q8_ec" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix">Me gusta ver los resultados de mi trabajo</p> 
+                </div>
+                <div class="row">
+                  <input id="q8_or" name="q8_or" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Me gustan las ideas y las teorías</p> 
+                </div>                          
+                <div class="row">
+                  <input id="q8_ca" name="q8_ca" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Me tomo mi tiempo antes de actuar</p> 
+                </div>  
+                <div class="row">
+                  <input id="q8_ea" name="q8_ea" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Me siento personalmente involucrado en las cosas</p> 
+                </div> 
+                               
+              </div>
+
+              <div class="col s4"> 
+                <p>9.- Aprendo mejor cuando...</p>
+                <br>
+
+                <div class="row">
+                  <input id="q9_ec" name="q9_ec" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix">Confio en mis observaciones</p> 
+                </div>
+                <div class="row">
+                  <input id="q9_or" name="q9_or" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Confío en mis sentimientos</p> 
+                </div>                          
+                <div class="row">
+                  <input id="q9_ca" name="q9_ca" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Puedo probar por mi cuenta</p> 
+                </div>  
+                <div class="row">
+                  <input id="q9_ea" name="q9_ea" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Confío en mis ideas</p> 
+                </div>
+                               
+              </div>                          
+            </div>
+          
+          </div>
+
+          <div id="test4" class="col s12" style="margin-top: 30px">
+            <div class="row"> 
+              <div class="col s4"> 
+                <p>10.- Cuando estoy aprendiendo...</p>
+                <br>
+
+                <div class="row">
+                  <input id="q10_ec" name="q10_ec" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix">Soy una persona reservada</p> 
+                </div>
+                <div class="row">
+                  <input id="q10_or" name="q10_or" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Soy una persona receptiva</p> 
+                </div>                          
+                <div class="row">
+                  <input id="q10_ca" name="q10_ca" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Soy una persona responsable</p> 
+                </div>  
+                <div class="row">
+                  <input id="q10_ea" name="q10_ea" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Soy una persona racional</p> 
+                </div>
+
+                             
+              </div>
+              <div class="col s4"> 
+                <p>11.- Cuando aprendo...</p>
+                <br>
+
+                <div class="row">
+                  <input id="q11_ec" name="q11_ec" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix">Me involucro</p> 
+                </div>
+                <div class="row">
+                  <input id="q11_or" name="q11_or" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Me gusta observar</p> 
+                </div>                          
+                <div class="row">
+                  <input id="q11_ca" name="q11_ca" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Evalúo las cosas</p> 
+                </div>  
+                <div class="row">
+                  <input id="q11_ea" name="q11_ea" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Me gusta ser activo</p> 
+                </div>                           
+              </div>
+              <div class="col s4"> 
+                <p>12.- Aprendo mejor cuando...</p>
+                <br>
+
+                <div class="row">
+                  <input id="q12_ec" name="q12_ec" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix">Analizo ideas</p> 
+                </div>
+                <div class="row">
+                  <input id="q12_or" name="q12_or" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Soy receptivo y abierto</p> 
+                </div>                          
+                <div class="row">
+                  <input id="q12_ca" name="q12_ca" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Soy cuidadoso</p> 
+                </div>  
+                <div class="row">
+                  <input id="q12_ea" name="q12_ea" type="number" class="validate col s2" min="1", max="4">
+                  <p class="col s10 survey prefix"> Soy práctico</p> 
+                </div> 
+                               
+              </div>                          
+            </div>
+            <div class="row">
+              <a href="#test3"><div class="btn waves-effect waves-ripple left">Atrás</div></a>
+              <%= content_tag :button,  :type => :submit, :class => ' waves-effect waves-ripple btn right' do %>
+                Finalizar
+              <% end %>
+            </div>           
+
+          </div>
+        </div>
+      </div>
+      <%end%>
+
+    </div>
+  </div>
+</div>
+      
