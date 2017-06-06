@@ -1,0 +1,100 @@
+
+
+<div class="row">
+  <div class="col s12">
+    <div class="card ">
+      <div class="card-action">
+          <div class="col s12">
+            <ul class="tabs">
+              <li class="tab col s3"><a href="#test1">Paso 1</a></li>
+              <li class="tab col s3"><a href="#test2">Paso 2</a></li>
+              <li class="tab col s3"><a href="#test3">Paso 3</a></li>
+              <li class="tab col s3"><a href="#test4">Paso 4</a></li>
+            </ul>
+          </div>
+      </div>
+      <%= form_for :survey ,url: survey_process_answer_path, method: :post do |f| %>
+      <div class="card-content white white-text">
+        <div class="row">
+
+
+          <div id="test1" class="col s12" style="margin-top: 30px">
+            <div class="row"> 
+              <div class="col s4"> 
+                <p>1.- Cuando aprendo...</p>
+                <p>
+                  <input name="question_1" type="radio" value="1_A" id="1_A" />
+                  <label for="1_A">Me gusta vivir sensaciones</label>
+                </p>
+                <p>
+                  <input name="question_1" type="radio" value="1_B" id="1_B" />
+                  <label for="1_B">Me gusta pensar sobre ideas</label>
+                </p>
+                <p>
+                  <input name="question_1" type="radio" value="1_C" id="1_C" />
+                  <label for="1_C">Me gusta estar haciendo cosas</label>
+                </p>
+                <p>
+                  <input name="question_1" type="radio" value="1_D" id="1_D" />
+                  <label for="1_D">Me gusta observar y escuchar</label>
+                </p>                                
+              </div>
+              <div class="col s4"> 
+                <p>2.- Aprendo mejor cuando...</p>
+                <p>
+                  <input name="question_2" type="radio" value="2_A" id="2_A" />
+                  <label for="2_A">Escucho y observo cuidadosamente</label>
+                </p>
+                <p>
+                  <input name="question_2" type="radio" value="2_B" id="2_B" />
+                  <label for="2_B">Confío en el pensamiento lógico</label>
+                </p>
+                <p>
+                  <input name="question_2" type="radio" value="2_C" id="2_C" />
+                  <label for="2_C">Confío en mi intución y sentimientos</label>
+                </p>
+                <p>
+                  <input name="question_2" type="radio" value="2_D" id="2_D" />
+                  <label for="2_D">Trabajo duro para lograr hacer las cosas</label>
+                </p>                                
+              </div>
+              <div class="col s4"> 
+                <p>3.- Cuando estoy aprendiendo...</p>
+                <p>
+                  <input name="question_3" type="radio" value="3_A" id="3_A" />
+                  <label for="3_A">Tiendo a usar el razonamiento</label>
+                </p>
+                <p>
+                  <input name="question_3" type="radio" value="3_B" id="3_B" />
+                  <label for="3_B">Soy responsable con lo que hago</label>
+                </p>
+                <p>
+                  <input name="question_3" type="radio" value="3_C" id="3_C" />
+                  <label for="3_C">Soy callado y reservado</label>
+                </p>
+                <p>
+                  <input name="question_3" type="radio" value="3_D" id="3_D" />
+                  <label for="3_D">Tengo fuertes sensaciones y reacciones</label>
+                </p>                                
+              </div>                          
+            </div>
+
+
+          </div>
+          <div id="test2" class="col s12">Test 2
+          </div>
+          <div id="test3" class="col s12">Test 3
+          </div>
+          <div id="test4" class="col s12">
+          <%= content_tag :button,  :type => :submit, :class => 'create-button col s8 offset-s2 waves-effect waves-ripple btn' do %>
+            Finalizar
+          <% end %>
+          </div>
+        </div>
+      </div>
+      <%end%>
+
+    </div>
+  </div>
+</div>
+      

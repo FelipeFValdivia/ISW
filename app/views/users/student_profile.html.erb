@@ -20,7 +20,9 @@
 	      </div>
       </div>
       <div class="card-action">
-        <a href="#">This is a link</a>
+        <%=link_to( :controller => 'surveys', :action => 'answer') do%>
+        	<p>No olvides responder la encuesta, así podremos saber cómo ayudarte de mejor manera</p>
+       	<%end%> 
       </div>
     </div>
   </div>

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get "/index/expert", to: "home#expert_index"
   get "/create_teacher_form", to: "users#create_teacher_form"
   post "/create_teacher", to: "users#create_teacher"
+  get "/survey/answer", to: "surveys#answer"
+  post "/survey/process_answer", to: "surveys#process_answer"
   # resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
