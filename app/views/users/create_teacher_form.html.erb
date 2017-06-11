@@ -4,16 +4,23 @@
     <div class="card create-teacher-card">
       <div class="card-content black-text">
         <span class="card-title">Crear profesor</span>
-				<%= form_for @teacher, url: create_teacher_path(permission_level: "teacher"), method: :post do |f| %>
-					<%= f.text_field :name, placeholder: "Nombre", required: true  %>
-					<%= f.email_field :email, placeholder: "Correo", required: true  %>
-					<%= f.date_field :birth_date, placeholder: "Fecha de nacimiento" %>
-					<%= f.password_field :password, placeholder: "Contraseña", required: true  %>
-          <%= content_tag :button,  :type => :submit, :class => 'col s8 offset-s2 waves-effect waves-ripple btn' do %>
-             Crear
-          <% end %>						
-				<% end -%>
+        <div class="row">
+  				<%= form_for @teacher, url: create_teacher_path(permission_level: "teacher"), method: :post do |f| %>
+  					<%= f.text_field :name, placeholder: "Nombre", required: true  %>
+  					<%= f.email_field :email, placeholder: "Correo", required: true  %>
+  					<%= f.date_field :birth_date, placeholder: "Fecha de nacimiento" %>
+  					<%= f.password_field :password, placeholder: "Contraseña", required: true  %>
+            <%= content_tag :button,  :type => :submit, :class => 'col s8 offset-s2 waves-effect waves-ripple btn' do %>
+               Crear
+            <% end %>						
+  				<% end -%>
+        </div>
       </div>
     </div>
   </div>
 </div>
+<div class="row">
+  <%= link_to teachers_users_path, method: :get do %>
+    <div class= "btn waves-effect waves-ripple col s2 offset-s5">Volver </div>
+  <%end%> 
+</div> 

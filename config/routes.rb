@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       get "/content/new", to: "contents#new"
       get "/content/show/:content_id", to: "contents#show", as: "show_content"
       post "/content/create", to: "contents#create"
+      put "/content/update", to: "contents#update"
     end
   end
 

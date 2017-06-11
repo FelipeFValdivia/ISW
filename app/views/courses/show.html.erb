@@ -28,7 +28,7 @@
                   <td><%=content.name%></td>
                   <td><%=content.description%></td>
                   <td>
-                    <%=link_to( controller: 'contents', action: 'show', id: content.id) do%>
+                    <%=link_to( controller: 'contents', action: 'show', id: @course.id, content_id: content.id) do%>
                       <i class="edit-icons material-icons tiny">mode_edit</i>
                     <%end%>              
                   </td>
@@ -37,8 +37,14 @@
 
             </tbody>
           </table> 
-        </div>        
+        </div>  
+    
       </div>
     </div>
   </div>
 </div>
+<div class="row">
+  <%= link_to courses_path, method: :get do %>
+    <div class= "btn waves-effect waves-ripple col s2 offset-s5">Volver </div>
+  <%end%> 
+</div> 

@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
-	before_action :set_content, only: [:show]
-	before_action :set_course_content, only: [:show, :create, :new]
+	before_action :set_content, only: [:show, :update]
+	before_action :set_course_content, only: [:show, :create, :new, :update]
 	
 	def show
 		
@@ -17,11 +17,25 @@ class ContentsController < ApplicationController
 		@content.course_id = @course.id
 		@content.save
 		if @content.errors.empty?
-			redirect_to show_content_course_path(content_id: @content.id, id: @course.id), notice: "Curso creado correctamente"
+			redirect_to show_content_course_path(content_id: @content.id, id: @course.id), notice: "Contenido creado correctamente"
 		else
-			redirect_to @course, notice: "El curso no pudo ser creado correctamente"
+			redirect_to @course, notice: "El contenido no pudo ser creado correctamente"
 		end
 
+	end
+
+	def update
+		@content.update(content_params)
+		respond_to do |format|
+			if @content.errors.empty?
+				format.html {redirect_to show_content_course_path(content_id: @content.id, id: @course.id), notice: "Contenido actualizado correctamente"}
+        format.json { respond_with_bip(@content) }
+			else
+				format.html {redirect_to show_content_course_path(content_id: @content.id, id: @course.id), notice: "Contenido no pudo ser actualizado"}
+        format.json { render json: @client.errors, status: :unprocessable_entity }
+			
+			end
+		end
 	end
 
 	private
