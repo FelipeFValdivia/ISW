@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :student_profile]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :student_profile, :show_teacher]
   # GET /users
   # GET /users.json
   def index
@@ -20,17 +20,21 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def create_teacher_form
-  	@teacher = User.new(permission_level: "teacher")
-  end
-
   def student_profile
 
   end
 
+
+  # Teachers methods
+
+  def create_teacher_form
+    @teacher = User.new(permission_level: "teacher")
+  end
+
   def create_teacher
   	@teacher = User.new(user_params)
-  	@teacher.permission_level == "teacher"
+  	@teacher.permission_level = "teacher"
+
   	@teacher.save
   	if @teacher.errors.messages.empty?
   		redirect_to @teacher, notice: "Profesor creado con éxito."
@@ -39,6 +43,16 @@ class UsersController < ApplicationController
   	end
 
   end
+
+  def teachers_index
+    @teachers = User.where(permission_level: "teacher")
+  end
+
+  def show_teacher
+    
+  end
+
+
 
   # POST /users
   # POST /users.json
@@ -61,10 +75,7 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to workers_users_path, notice: 'Usuario eliminado.' }
-      format.json { head :no_content }
-    end
+    redirect_to teachers_users_path, notice: 'Usuario eliminado.'
   end
 
 

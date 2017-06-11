@@ -1,0 +1,17 @@
+
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card create-teacher-card">
+      <div class="card-content black-text">
+        <span class="card-title">Crear nuevo curso</span>
+				<%= form_for @course, url: courses_path, method: :post do |f| %>
+					<%= f.text_field :name, placeholder: "Nombre del curso", required: true  %>
+					<%= f.text_area :description, placeholder: "descripción del curso", required: true  %>
+          <%= content_tag :button,  :type => :submit, :class => 'col s8 offset-s2 waves-effect waves-ripple btn' do %>
+             Crear
+          <% end %>						
+				<% end -%>
+      </div>
+    </div>
+  </div>
+</div>

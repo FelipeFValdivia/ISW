@@ -6,10 +6,12 @@ class SurveysController < ApplicationController
 	end
 
 	def process_answer
+		
 		total_ec = 0
 		total_or = 0
 		total_ea = 0
 		total_ca = 0
+
 		11.times do |i|
 			total_ec += params["q" + (i + 1).to_s + "_ec"].to_i
 			total_or += params["q" + (i + 1).to_s + "_or"].to_i

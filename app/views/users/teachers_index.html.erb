@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="row">
+    <h4 class="col s10 offset-s1">Profesores</h4>
+
+    <table class="highlight col s10 offset-s1 up-padding">
+      <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th> 
+            <th>Día de creación</th>
+            <th>Cursos creados</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%@teachers.each do |teacher|%>
+          <tr>
+            <td><%=teacher.name%></td>
+            <td><%=teacher.email%></td>
+            <td><%=teacher.created_at.strftime("%d-%m-%Y")%></td>
+            <td>-</td>
+            <td>
+              <%=link_to( controller: 'users', action: 'show_teacher', id: teacher.id) do%>
+                <i class="edit-icons material-icons tiny">mode_edit</i>
+              <%end%>              
+            </td>
+          </tr>
+        <%end%>
+
+      </tbody>
+    </table>
+  </div>
+  <br>
+
+  <%= link_to create_teacher_form_path, method: :get do %>
+    <div class= "btn waves-effect waves-ripple col s4 offset-s4">Crear profesor </div>
+  <%end%>
+
+</div>

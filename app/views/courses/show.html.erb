@@ -1,0 +1,44 @@
+
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card create-teacher-card">
+      <div class="card-content black-text">
+        <div class="row">
+          <span class="card-title"><%=@course.name%></span>
+          <p><%=best_in_place @course, :description, as: :input%></p>
+        </div>
+        <div class="row">
+          <p>Total contenidos: <%=@course.contents.count%> </p>
+          <%=link_to( controller: 'contents', action: 'new', id: @course.id) do%>
+            <i class="edit-icons material-icons tiny prefix left" title="Agregar nuevo contenido">add</i>
+          <%end%>             
+
+          <br>
+          <table class="highlight">
+            <thead>
+              <tr>
+                  <th>Nombre contenido</th>
+                  <th>Descripción</th> 
+              </tr>
+            </thead>
+
+            <tbody>
+              <%@course.contents.each do |content|%>
+                <tr>
+                  <td><%=content.name%></td>
+                  <td><%=content.description%></td>
+                  <td>
+                    <%=link_to( controller: 'contents', action: 'show', id: content.id) do%>
+                      <i class="edit-icons material-icons tiny">mode_edit</i>
+                    <%end%>              
+                  </td>
+                </tr>
+              <%end%>
+
+            </tbody>
+          </table> 
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>

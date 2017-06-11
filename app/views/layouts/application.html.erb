@@ -13,6 +13,15 @@
 <nav class="navbar navbar-inverse navbar-style">
   
   <ul id="dropdown1" class="dropdown-content">
+      <li class="bold">  
+        <%=link_to( :controller => 'users', :action => 'student_profile', :id => current_user.id) do%>
+          Mi perfil
+        <%end%>
+    </li>
+    <li><%=link_to( :controller => 'home', :action => 'normal_user_index', :id => current_user.id) do%>
+      Ir al home
+    <%end%>
+    </li>    
     <li><%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete, class: "log-out") %> </li>
   </ul>
   <ul id="user-name-menu" class="right" >   
@@ -20,7 +29,10 @@
   </ul>  
 </nav>
 <ul id="slide-out" class="side-nav fixed teal lighten-5">
-  <li><%= image_tag("NN.svg", class: "menu-icon hide-on-med-and-down")%></li>
+
+  <li>
+      <%= image_tag("NN.svg", class: "menu-icon hide-on-med-and-down")%>
+  </li>
   <li><div class="userView">
     <div class="background">
     </div>

@@ -1,16 +1,32 @@
 Rails.application.routes.draw do
 
+  root 'index#index'
+
   devise_for :users, path: "user"
+  
   resources :users do
+
     collection do
+      get "/teachers", to: "users#teachers_index"
       
     end
+
     member do
       get "/student_profile", to: "users#student_profile"
+      get "/teacher/show", to: "users#show_teacher"
       
     end
-  end  
-  root 'index#index'
+
+  end
+
+  resources :courses do 
+    member do
+      get "/content/new", to: "contents#new"
+      get "/content/show/:content_id", to: "contents#show", as: "show_content"
+      post "/content/create", to: "contents#create"
+    end
+  end
+
   get "/home/redirect", to: "home#redirect"
   get "/index", to: "home#index"
   get "/index/student", to: "home#normal_user_index"

@@ -11,10 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606042100) do
+ActiveRecord::Schema.define(version: 20170606221059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contents", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "course_id"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "contents", ["course_id"], name: "index_contents_on_course_id", using: :btree
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "user_courses", force: :cascade do |t|
+    t.string   "relation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "course_id"
+  end
+
+  add_index "user_courses", ["course_id"], name: "index_user_courses_on_course_id", using: :btree
+  add_index "user_courses", ["user_id"], name: "index_user_courses_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
