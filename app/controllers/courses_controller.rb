@@ -30,12 +30,15 @@ class CoursesController < ApplicationController
 
 	def update
 		@course.update(course_params)
-		
-		if @course.errors.empty?
-			redirect_to @course
-		else
-			redirect_to @course, notice: "El curso no pudo ser actualizado"
-		end		
+		respond_to do |format|
+			if @course.errors.empty?
+				format.html {redirect_to @course, notice: "Curso actualizado correctamente"}
+				format.json {respond_with_bip(@course)}
+			else
+				format.html {redirect_to @course, notice: "El curso no pudo ser actualizado"}
+				format.json {respond_with_bip(@coursse)}
+			end
+		end
 	end
 
 	def new
