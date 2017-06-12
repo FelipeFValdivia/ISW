@@ -6,8 +6,7 @@
       <thead>
         <tr>
             <th>Nombre</th>
-            <th>Encargado del curso</th>
-            <th>Creado el</th>
+            <th>Correo del encargado</th>
         </tr>
       </thead>
 
@@ -15,8 +14,7 @@
         <%@enrolled_courses.each do |course|%>
           <tr>
             <td><%=course.name%></td>
-            <td><%=course.in_charge.name%></td>
-            <td><%=course.created_at.strftime("%d-%m-%Y")%></td>
+            <td><%=course.in_charge.email%></td>
             <td>
               <%=link_to( controller: 'courses', action: 'show_enrolled', id: course.id) do%>
                 <i class="edit-icons material-icons tiny">mode_edit</i>
@@ -35,8 +33,7 @@
       <thead>
         <tr>
             <th>Nombre</th>
-            <th>Encargado del curso</th>
-            <th>Creado el</th>
+            <th>Correo del encargado</th>
         </tr>
       </thead>
 
@@ -44,8 +41,7 @@
         <%@courses.each do |course|%>
           <tr>
             <td><%=course.name%></td>
-            <td><%=course.in_charge.name%></td>
-            <td><%=course.created_at.strftime("%d-%m-%Y")%></td>
+            <td><%=course.in_charge.email%></td>
             <td>
               <%=link_to( controller: 'courses', action: 'show_to_student', id: course.id) do%>
                 <i class="edit-icons material-icons tiny">mode_edit</i>

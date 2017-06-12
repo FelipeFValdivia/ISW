@@ -18,8 +18,8 @@ class ApplicationController < ActionController::Base
 
   def layout_by_resource
     return 'expert_layout' if user_signed_in? and (current_user.permission_level == "expert" )
-    return 'teacher_layout' if user_signed_in and current_user.permission_level == "teacher"
-    return 'application' if user_signed_in? and current_user.permission_level.nil?
+    return 'teacher_layout' if user_signed_in? and current_user.permission_level == "teacher"
+    return 'application' if user_signed_in?
     'devise_layout'
 
   end  

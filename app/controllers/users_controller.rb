@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :has_expert_permission?, only: [:create_teacher_form, :create_teacher, :teachers_index, :show_teacher]
   before_action :set_user, only: [:show, :edit, :update, :destroy, :student_profile, :show_teacher]
   # GET /users
   # GET /users.json
@@ -85,6 +86,10 @@ class UsersController < ApplicationController
 
 
   private
+
+    def has_expert_permission?
+      has_permission?(["expert"])
+    end
 
 
     # Use callbacks to share common setup or constraints between actions.

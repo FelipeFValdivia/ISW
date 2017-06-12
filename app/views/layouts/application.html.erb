@@ -19,7 +19,7 @@
         <%end%>
     </li>
     <li><%=link_to( :controller => 'home', :action => 'normal_user_index', :id => current_user.id) do%>
-      Ir al home
+      Ir al inicio
     <%end%>
     </li>    
     <li><%= link_to('Cerrar sesión', destroy_user_session_path, :method => :delete, class: "log-out") %> </li>
