@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="row">
+    <h4 class="col s10 offset-s1">Cursos inscritos</h4>
+
+    <table class="highlight col s10 offset-s1" style="-webkit-max-logical-height: 1em; overflow-y: scroll;">
+      <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Encargado del curso</th>
+            <th>Creado el</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%@enrolled_courses.each do |course|%>
+          <tr>
+            <td><%=course.name%></td>
+            <td><%=course.in_charge.name%></td>
+            <td><%=course.created_at.strftime("%d-%m-%Y")%></td>
+            <td>
+              <%=link_to( controller: 'courses', action: 'show_enrolled', id: course.id) do%>
+                <i class="edit-icons material-icons tiny">mode_edit</i>
+              <%end%>
+            </td>
+          </tr>
+        <%end%>
+
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <h4 class="col s10 offset-s1">Cursos no inscritos</h4>
+
+    <table class="highlight col s10 offset-s1" style="-webkit-max-logical-height: 10em; overflow-y: scroll;">
+      <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Encargado del curso</th>
+            <th>Creado el</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%@courses.each do |course|%>
+          <tr>
+            <td><%=course.name%></td>
+            <td><%=course.in_charge.name%></td>
+            <td><%=course.created_at.strftime("%d-%m-%Y")%></td>
+            <td>
+              <%=link_to( controller: 'courses', action: 'show_to_student', id: course.id) do%>
+                <i class="edit-icons material-icons tiny">mode_edit</i>
+              <%end%>
+            </td>
+          </tr>
+        <%end%>
+
+      </tbody>
+    </table>
+  </div>  
+
+</div>

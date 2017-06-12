@@ -1,9 +1,10 @@
 class CoursesController < ApplicationController
-	before_action :set_course, only: [:show, :update, :destroy]
-	
+	before_action :has_student_permission?, only: [:show_to_student, :student_index, :enrollm, :show_enrolled]
+	before_action :has_teacher_or_expert_permission?, only: [:index, :create, :show, :update, :new]
+	before_action :set_course, only: [:show, :update, :destroy, :show_to_student, :enroll, :show_enrolled]
+
 	def index
-		@courses = Course.all
-		
+		@courses = current_user.enabled_courses
 	end
 
 	def create
@@ -22,6 +23,17 @@ class CoursesController < ApplicationController
 		
 		end
 
+	end
+
+	def enroll
+		@user_course = UserCourse.new(course_id: @course.id, user_id: current_user.id, relation: "Estudiante")
+		@user_course.save
+		if @user_course.errors.empty? 
+			redirect_to show_enrolled_course_path(id: @course.id), notice: "Curso inscrito con éxito"
+		else
+			redirect_to show_to_student_course_path(id: @course.id), notice: "Curso no pudo ser inscrito"
+
+		end
 	end
 
 	def show
@@ -45,7 +57,29 @@ class CoursesController < ApplicationController
 		@course = Course.new
 	end
 
+	def student_index
+		@courses = current_user.enabled_courses
+		@enrolled_courses = current_user.enrolled_courses
+	end
+
+	def show_to_student
+		
+	end
+
+	def show_enrolled
+		
+	end
+
   private
+
+  def has_student_permission?
+  	has_permission?([nil])
+  end
+
+  def has_teacher_or_expert_permission?
+  	has_permission?(["teacher", "expert"])
+  	
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_course

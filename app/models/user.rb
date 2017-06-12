@@ -13,4 +13,34 @@ class User < ActiveRecord::Base
   	description = "Por favor, cuéntanos quién eres (sé creativo)"
   	
   end
+
+  def enabled_courses
+
+    if permission_level.nil?
+      current_courses = []
+      user_courses.select(:course_id).each do |user_course|
+        current_courses << user_course.course_id
+      end
+
+      @courses = Course.where.not(id: current_courses)
+
+    elsif permission_level == "teacher"
+      []
+    else
+      @courses = Course.all
+
+    end
+  end
+
+  def enrolled_courses
+    courses
+  end
+
+  def is_my_course? course_id
+
+    @course = Course.find(course_id)
+    courses.include?(@course)
+    
+  end
+
 end

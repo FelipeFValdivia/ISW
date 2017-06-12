@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
   end
 
   protected
+
+  def has_permission? permission_array
+    
+    redirect_to home_redirect_path unless permission_array.include?(current_user.permission_level)
+      
+    
+  end
+
   def layout_by_resource
     return 'expert_layout' if user_signed_in? and (current_user.permission_level == "expert" or current_user.permission_level == "teacher")
     return 'application' if user_signed_in?

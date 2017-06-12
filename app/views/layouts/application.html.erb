@@ -33,11 +33,11 @@
   <li>
       <%= image_tag("NN.svg", class: "menu-icon hide-on-med-and-down")%>
   </li>
-  <li><div class="userView">
-    <div class="background">
-    </div>
-
-  </div></li>
+  <li class="bold">  
+    <%=link_to student_index_courses_path do%>
+    <i class="material-icons prefix">perm_identity</i><p class="side-nav-list">Cursos</p>
+    <%end%>
+  </li>  
 </ul>
 <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 </header>
