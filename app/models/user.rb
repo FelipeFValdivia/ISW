@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
       @courses = Course.where.not(id: current_courses)
 
     elsif permission_level == "teacher"
-      []
+      @courses = courses
     else
       @courses = Course.all
 
