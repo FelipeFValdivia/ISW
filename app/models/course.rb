@@ -8,4 +8,12 @@ class Course < ActiveRecord::Base
   	@user_course = UserCourse.find_by(course_id: id, relation: "creo el curso")
   	User.find(@user_course.user_id)
   end
+
+	def self.search(search)
+	  if search
+	    where('name LIKE ?', "%#{search}%")
+	  else
+	    Course.all
+	  end
+	end  
 end

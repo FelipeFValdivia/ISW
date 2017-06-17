@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   	@teacher.save
   	if @teacher.errors.messages.empty?
-  		redirect_to @teacher, notice: "Profesor creado con éxito."
+  		redirect_to teacher_show_user_path(id: @teacher.id), notice: "Profesor creado con éxito."
   	else
   		redirect_to create_teacher_form_path, notice: "Hubo un error."
   	end

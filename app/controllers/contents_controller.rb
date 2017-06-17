@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
-	before_action :set_content, only: [:show, :update]
-	before_action :set_course_content, only: [:show, :create, :new, :update]
+	before_action :set_content, only: [:show, :update, :search_content]
+	before_action :set_course_content, only: [:show, :create, :new]
 	
 	def show
 		
@@ -36,6 +36,10 @@ class ContentsController < ApplicationController
 			
 			end
 		end
+	end
+
+	def search
+		
 	end
 
 	private

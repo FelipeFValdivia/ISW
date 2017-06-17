@@ -22,8 +22,10 @@ Rails.application.routes.draw do
   resources :courses do 
     collection do
       get "/student_index", to: "courses#student_index"
+      get "/search", to: "courses#search"
     end
     member do
+      get "/search_content/:content_id", to: "contents#search", as: "search_content"
       get "/show_enrolled", to: "courses#show_enrolled"
       post "/enroll", to: "courses#enroll"
       get "/show_to_student", to: "courses#show_to_student"

@@ -7,6 +7,12 @@
           <span class="card-title"><%=@content.name%></span>
           <p><%=best_in_place @content, :description, as: :input, :path => content_update_course_path(content_id: @content.id, id: @course.id)%></p>
         </div>
+        <div class="row">
+          <%= link_to search_content_course_path(id: @course.id, content_id: @content.id), method: :get do %>
+            <div class= "btn waves-effect waves-ripple col s6 offset-s3">Buscar contenido </div>
+          <%end%>
+        </div>
+
         
       </div>
     </div>

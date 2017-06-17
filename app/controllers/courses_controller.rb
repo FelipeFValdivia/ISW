@@ -58,8 +58,7 @@ class CoursesController < ApplicationController
 	end
 
 	def student_index
-		@courses = current_user.enabled_courses
-		@enrolled_courses = current_user.enrolled_courses
+		@courses = Course.all
 	end
 
 	def show_to_student
@@ -68,6 +67,12 @@ class CoursesController < ApplicationController
 
 	def show_enrolled
 		
+	end
+
+	def search
+
+		@courses = Course.search(params["search"])
+
 	end
 
   private

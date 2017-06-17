@@ -26,15 +26,6 @@
             </tbody>
           </table> 
         </div>
-        <div class="row">
-          <% unless course_belongs_to_me?(@course.id) %>
-            <%= link_to enroll_course_path(id: @course.id), method: :post do %>
-              <div class= "btn waves-effect waves-ripple col s2 offset-s5">Inscribir </div>
-            <%end%>           
-          <%end%>
-
-        </div>
-
       </div>
     </div>
   </div>

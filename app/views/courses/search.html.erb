@@ -1,24 +1,13 @@
 <div class="row">
-  <div class="col s6 offset-s1">
-    <%= form_tag search_courses_path, :method => 'get' do %>
-      <p>
-        <%= text_field_tag :search, params[:search], placeholder: "Buscar curso "%>
-        <%= submit_tag "Buscar", :name => nil %>
-      </p>
-  <% end %>
-  </div>
-</div>
-
-<div class="row">
- 
   <div class="row">
     <h4 class="col s10 offset-s1">Cursos</h4>
 
-    <table class="highlight col s10 offset-s1" style="-webkit-max-logical-height: 10em; overflow-y: scroll;">
+    <table class="highlight col s10 offset-s1">
       <thead>
         <tr>
             <th>Nombre</th>
-            <th>Correo del encargado</th>
+            <th>Encargado del curso</th>
+            <th>Creado el</th>
         </tr>
       </thead>
 
@@ -26,7 +15,8 @@
         <%@courses.each do |course|%>
           <tr>
             <td><%=course.name%></td>
-            <td><%=course.in_charge.email%></td>
+            <td><%=course.in_charge.name%></td>
+            <td><%=course.created_at.strftime("%d-%m-%Y")%></td>
             <td>
               <%=link_to( controller: 'courses', action: 'show_to_student', id: course.id) do%>
                 <i class="edit-icons material-icons tiny">search</i>
@@ -37,7 +27,6 @@
 
       </tbody>
     </table>
-  </div>  
+  </div>
 
 </div>
-
