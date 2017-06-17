@@ -25,3 +25,8 @@ $(".button-collapse").sideNav();
 $(document).ready(function(){
   $('ul.tabs').tabs();
 });
+
+$('.datepicker').pickadate({
+	selectMonths: true,
+	selectYears: 100
+});

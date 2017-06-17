@@ -40,7 +40,12 @@ class UsersController < ApplicationController
   	if @teacher.errors.messages.empty?
   		redirect_to teacher_show_user_path(id: @teacher.id), notice: "Profesor creado con éxito."
   	else
-  		redirect_to create_teacher_form_path, notice: "Hubo un error."
+      if @teacher.errors.messages.include?(:birth_date)
+        redirect_to create_teacher_form_path, notice: "Formato de fecha incorrecto."
+      else
+        redirect_to create_teacher_form_path, notice: "Hubo un error."
+
+      end
   	end
 
   end
