@@ -11,7 +11,7 @@
 
 
 					<%= form_for @material, url: material_course_path(content_id: @content.id, id: @course.id, material_id: @material.id), method: :put, html: { class: "edit_post", id: "edit_post_45" } do |f| %>
-					   <%=f.select :learning_type, [["convergente", "convergente"], ["divergente", "divergente"], ["asimilador","asimilador"], [ "adaptador", "adaptador"]] %>
+					   <%=f.select :learning_type, [["convergente", 1], ["divergente", 2], ["asimilador",3], [ "adaptador", 4]] %>
 					   <%= f.submit "Cambiar el tipo de aprendizaje"%>
 					<% end %>          	
         	</div>

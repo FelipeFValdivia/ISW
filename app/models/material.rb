@@ -16,18 +16,20 @@ class Material < ActiveRecord::Base
 
 	def spanish_learning_type
 		case learning_type
-		when "convergente"
+		when 1
 			"convergente"
-		when "asimilador"
+		when 2
 			"asimilador"
-		when "adaptador"
+		when 3
 			"adaptador"
-		when "divergente"
+		when 4
 			"divergente"
 		else
 			"Aún no selecciona tipo de aprendizaje"
 		end
 	end
+
+
 
 
 end

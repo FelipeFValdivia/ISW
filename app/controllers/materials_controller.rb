@@ -10,13 +10,8 @@ class MaterialsController < ApplicationController
 	end
 
 	def update
-		pp ""
-		pp ""
-		pp ""
-		pp ""
-		pp ""
 		@material.update(material_params)
-		pp @material
+		redirect_to show_content_course_path(content_id: @content.id, id: @course.id), notice: "Contenido creado correctamente"
 	end
 
 

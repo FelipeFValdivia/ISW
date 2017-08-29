@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170828235537) do
 
   create_table "materials", force: :cascade do |t|
     t.text     "description"
-    t.string   "learning_type"
+    t.integer  "learning_type"
     t.integer  "content_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
