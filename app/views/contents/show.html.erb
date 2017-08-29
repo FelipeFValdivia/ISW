@@ -49,8 +49,12 @@
               <tbody>
                 <%@content.materials.each do |material|%>
                   <tr>
-                    <td><%=material.description%></td>
-                    <td><%=material.spanish_type%></td>
+                    <% if material.material_type == "external" %>
+                      <td><a href=<%=material.description%>><%=material.description%></a></td>
+                    <%else%>
+                      <td><%=material.description%></td>
+                    <%end%>
+                      <td><%=material.spanish_type%></td>
                   </tr>
                 <%end%>
 
