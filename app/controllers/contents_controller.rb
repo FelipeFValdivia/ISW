@@ -46,16 +46,18 @@ class ContentsController < ApplicationController
 			@page = Wikipedia.find( @content.name, :domain => 'es.wikipedia.org')
 
 			@summary = @page.summary
-			Material.new(description: @summary, material_type: "summary" , content_id: @content.id).save
-			@images = @page.image_descriptionurls
-			@images.each do |image|
-				Material.new(description: image, material_type: "images" , content_id: @content.id).save
-			end
-			@font = @page.fullurl.first
-			Material.new(description: @font, material_type: "url" , content_id: @content.id).save
-			@ext_links = @page.extlinks
-			@ext_links.each do |ext|
-				Material.new(description: ext, material_type: "external" , content_id: @content.id).save
+			unless @summary.nil?
+				Material.new(description: @summary, material_type: "summary" , content_id: @content.id).save
+				@images = @page.image_descriptionurls
+				@images.each do |image|
+					Material.new(description: image, material_type: "images" , content_id: @content.id).save
+				end
+				@font = @page.fullurl.first
+				Material.new(description: @font, material_type: "url" , content_id: @content.id).save
+				@ext_links = @page.extlinks
+				@ext_links.each do |ext|
+					Material.new(description: ext, material_type: "external" , content_id: @content.id).save
+				end
 			end
 		else
 			redirect_to home_redirect_path

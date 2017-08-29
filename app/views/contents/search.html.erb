@@ -26,9 +26,16 @@
 	</div>
 	</div>
 <%end%>
-
+<div class="row">
+  <%= link_to show_content_course_path(content_id: @content.id, id: @course.id), method: :get do %>
+    <div class= "btn waves-effect waves-ripple col s2 offset-s5">Volver </div>
+  <%end%> 
+</div> 
 
 <script type="text/javascript">
+<% unless @summary.nil? %>
+
 	alert("Materia agregada con éxito")
+	<%end%>
 
 </script>
