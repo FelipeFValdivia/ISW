@@ -1,3 +1,7 @@
+
+
+<% if @content.materials.empty? %>
+
 <div class="row">
   <div class="col s12 m6 offset-m3">
     <div class="card create-teacher-card">
@@ -14,6 +18,53 @@
     </div>
   </div>
 </div>
+
+
+<%else%>
+
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <div class="card create-teacher-card">
+        <div class="card-content black-text">
+          <div class="row">
+            <span class="card-title"><%=@course.name%></span>
+            <p><%=@course.description%></p>
+          </div>
+          <div class="row">
+            <br>
+            <table class="highlight">
+              <thead>
+                <tr>
+                    <th>Contenido</th>
+                    <th>Tipo</th> 
+                </tr>
+              </thead>
+
+              <tbody>
+                <%@content.materials.each do |material|%>
+                  <%if current_user.learning_style.nil? or (material.spanish_learning_type == current_user.learning_style)%>
+                  <tr>
+                    <% if material.material_type == "external" %>
+                      <td><a href=<%=material.description%>><%=material.description%></a></td>
+                    <%else%>
+                      <td><%=material.description%></td>
+                    <%end%>
+                      <td><%=material.spanish_type%></td>
+                  </tr>
+                  <%end%>
+                <%end%>
+
+              </tbody>
+            </table> 
+          </div>  
+      
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%end%>
+
 <div class="row">
   <%= link_to show_to_student_course_path(id: @course.id), method: :get do %>
     <div class= "btn waves-effect waves-ripple col s2 offset-s5">Volver </div>
