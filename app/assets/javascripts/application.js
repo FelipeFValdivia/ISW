@@ -30,3 +30,8 @@ $('.datepicker').pickadate({
 	selectMonths: true,
 	selectYears: 100
 });
+
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+            

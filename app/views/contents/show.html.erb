@@ -43,6 +43,7 @@
                 <tr>
                     <th>Contenido</th>
                     <th>Tipo</th> 
+                    <th>Aprendizaje</th> 
                 </tr>
               </thead>
 
@@ -55,6 +56,12 @@
                       <td><%=material.description%></td>
                     <%end%>
                       <td><%=material.spanish_type%></td>
+                      <td><%=material.spanish_learning_type%></td>
+                      <td>                    
+                        <%=link_to( controller: 'materials', action: 'show', id: @course.id, content_id: @content.id, material_id: material.id) do%>
+                          <i class="edit-icons material-icons tiny">search</i>
+                        <%end%>   
+                      </td>
                   </tr>
                 <%end%>
 

@@ -34,6 +34,8 @@ Rails.application.routes.draw do
       post "/content/create", to: "contents#create"
       put "/content/update", to: "contents#update"
       get "/content/:content_id/show_to_student", to: "contents#show_to_student", as: "show_content_to_student"
+      get "/content/:content_id/material/:material_id", to: "materials#show", as: "material"
+      put "/content/:content_id/material/:material_id", to: "materials#update"
     end
   end
 

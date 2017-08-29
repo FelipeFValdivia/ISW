@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card create-teacher-card">
+      <div class="card-content black-text">
+        <div class="row">
+          <span class="card-title"><%=@content.name%></span>
+          <h5><%=@content.name%></h5>
+         	<p><%=@material.description%></p>
+         	<div class="input-field">
+
+
+
+					<%= form_for @material, url: material_course_path(content_id: @content.id, id: @course.id, material_id: @material.id), method: :put, html: { class: "edit_post", id: "edit_post_45" } do |f| %>
+					   <%=f.select :learning_type, [["convergente", "convergente"], ["divergente", "divergente"], ["asimilador","asimilador"], [ "adaptador", "adaptador"]] %>
+					   <%= f.submit "Cambiar el tipo de aprendizaje"%>
+					<% end %>          	
+        	</div>
+      	
+
+
+    </div>
+  </div>
+</div>
