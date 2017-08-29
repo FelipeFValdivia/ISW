@@ -2,6 +2,12 @@ class Course < ActiveRecord::Base
 	has_many :user_courses
   has_many :users, through: :user_courses
   has_many :contents
+  before_save :downcase_fields
+
+
+  def downcase_fields
+  	self.name.downcase!
+	end
 
   def in_charge
   	
@@ -11,7 +17,7 @@ class Course < ActiveRecord::Base
 
 	def self.search(search)
 	  if search
-	    where('name LIKE ?', "%#{search}%")
+	    where('name LIKE ?', "%#{search.downcase}%")
 	  else
 	    Course.all
 	  end

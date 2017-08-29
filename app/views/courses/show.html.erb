@@ -4,7 +4,7 @@
     <div class="card create-teacher-card">
       <div class="card-content black-text">
         <div class="row">
-          <span class="card-title"><%=@course.name%></span>
+          <span class="card-title"><%=@course.name.capitalize%></span>
           <p><%=best_in_place @course, :description, as: :input%></p>
         </div>
         <div class="row">
@@ -25,7 +25,7 @@
             <tbody>
               <%@course.contents.each do |content|%>
                 <tr>
-                  <td><%=content.name%></td>
+                  <td><%=content.name.capitalize%></td>
                   <td><%=content.description%></td>
                   <td>
                     <%=link_to( controller: 'contents', action: 'show', id: @course.id, content_id: content.id) do%>

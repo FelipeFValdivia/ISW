@@ -5,7 +5,7 @@
     <div class="card create-teacher-card">
       <div class="card-content black-text">
         <div class="row">
-          <span class="card-title"><%=@content.name%></span>
+          <span class="card-title"><%=@content.name.capitalize%></span>
           <p><%=best_in_place @content, :description, as: :input, :path => content_update_course_path(content_id: @content.id, id: @course.id)%></p>
         </div>
           <div class="row">
@@ -28,7 +28,7 @@
       <div class="card create-teacher-card">
         <div class="card-content black-text">
           <div class="row">
-            <span class="card-title"><%=@course.name%></span>
+            <span class="card-title"><%=@course.name.capitalize%></span>
             <p><%=best_in_place @course, :description, as: :input%></p>
           </div>
           <div class="row">

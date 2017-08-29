@@ -4,7 +4,7 @@
     <div class="card create-teacher-card">
       <div class="card-content black-text">
         <div class="row">
-          <span class="card-title"><%=@course.name%></span>
+          <span class="card-title"><%=@course.name.capitalize%></span>
           <p><%=@course.description%></p>
         </div>
         <div class="row">       
@@ -19,7 +19,7 @@
             <tbody>
               <%@course.contents.each do |content|%>
                 <tr>
-                  <td><%=content.name%></td>
+                  <td><%=content.name.capitalize%></td>
                   <td>
                     <%=link_to( controller: 'contents', action: 'show_to_student', id: @course.id, content_id: content.id) do%>
                       <i class="edit-icons material-icons tiny">search</i>
