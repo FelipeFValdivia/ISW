@@ -19,13 +19,17 @@ class Material < ActiveRecord::Base
 		when 1
 			"convergente"
 		when 2
-			"divergente"
-		when 3
 			"asimilador"
-		when 4
+		when 3
 			"adaptador"
+		when 4
+			"divergente"
 		else
 			"Aún no selecciona tipo de aprendizaje"
 		end
 	end
+
+
+
+
 end

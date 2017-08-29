@@ -38,7 +38,7 @@
             <%end%>             
 
             <br>
-            <table class="highlight">
+            <table class="highlight responsive-table">
               <thead>
                 <tr>
                     <th>Contenido</th>
@@ -51,7 +51,7 @@
                 <%@content.materials.each do |material|%>
                   <tr>
                     <% if material.material_type == "external" %>
-                      <td><a href=<%=material.description%>><%=material.description%></a></td>
+                      <td><a href=<%=material.description%>><%=material.description[0..30] + "..."%></a></td>
                     <%else%>
                       <td><%=material.description%></td>
                     <%end%>
