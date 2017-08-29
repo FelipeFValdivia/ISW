@@ -14,7 +14,7 @@
       <tbody>
         <%@courses.each do |course|%>
           <tr>
-            <td><%=course.name%></td>
+            <td><%=course.name.capitalize%></td>
             <td><%=course.in_charge.name%></td>
             <td><%=course.created_at.strftime("%d-%m-%Y")%></td>
             <td>

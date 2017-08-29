@@ -25,7 +25,7 @@
       <tbody>
         <%@courses.each do |course|%>
           <tr>
-            <td><%=course.name%></td>
+            <td><%=course.name.capitalize%></td>
             <td><%=course.in_charge.email%></td>
             <td>
               <%=link_to( controller: 'courses', action: 'show_to_student', id: course.id) do%>
