@@ -20,6 +20,11 @@
               <%@course.contents.each do |content|%>
                 <tr>
                   <td><%=content.name%></td>
+                  <td>
+                    <%=link_to( controller: 'contents', action: 'show_to_student', id: @course.id, content_id: content.id) do%>
+                      <i class="edit-icons material-icons tiny">search</i>
+                    <%end%>              
+                  </td>                  
                 </tr>
               <%end%>
 

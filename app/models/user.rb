@@ -47,4 +47,9 @@ class User < ActiveRecord::Base
     
   end
 
+  def student?
+    permission_level == nil
+    
+  end
+
 end

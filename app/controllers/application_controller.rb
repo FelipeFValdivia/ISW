@@ -24,11 +24,22 @@ class ApplicationController < ActionController::Base
     return 'application' if user_signed_in?
     'devise_layout'
 
-  end  
+  end
+
   def require_login
     redirect_to user_session_path, :notice => 'Antes inicia sesión' unless user_signed_in?
     ## if you want render 404 page
     ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
   end
+
+
+  def has_student_permission?
+    has_permission?([nil])
+  end
+
+  def has_teacher_or_expert_permission?
+    has_permission?(["teacher", "expert"])
+    
+  end  
 
 end

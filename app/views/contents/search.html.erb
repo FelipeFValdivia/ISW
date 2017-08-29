@@ -1,11 +1,34 @@
-<div class="row" style="margin-top: 50px">
-<div class="col s10 offset-s1">
-<p>El electromagnetismo es una rama de la física que estudia y unifica los fenómenos eléctricos y magnéticos en una sola teoría, cuyos fundamentos fueron presentados por Michael Faraday y formulados por primera vez de modo completo por James Clerk Maxwell. La formulación consiste en cuatro ecuaciones diferenciales vectoriales que relacionan el campo eléctrico, el campo magnético y sus respectivas fuentes materiales (corriente eléctrica, polarización eléctrica y polarización magnética), conocidas como ecuaciones de Maxwell.</p>
+<% unless @summary.nil? %>
+	<div class="row" style="margin-top: 50px">
+	<div class="col s10 offset-s1">
+	<h5><%=@content.name%></h5>
+	<p><%=@summary%></p>
+	<%@images.each do |image| %>
+		<img src="image" style="width:950px;height:500px;">
+	<%end%>
+	<p>Material extra: <p>
+	<ul>
+		<% @ext_links.each do |link| %>
+			<li><a href=<%=link%>> <%=link%> </a></li>
+		<%end%>
+	<ul>
+	<a href=<%=@font.to_s%>> Fuente</a>
 
-<p>El electromagnetismo es una teoría de campos; es decir, las explicaciones y predicciones que provee se basan en magnitudes físicas vectoriales o tensoriales dependientes de la posición en el espacio y del tiempo. El electromagnetismo describe los fenómenos físicos macroscópicos en los cuales intervienen cargas eléctricas en reposo y en movimiento, usando para ello campos eléctricos y magnéticos y sus efectos sobre las sustancias sólidas, líquidas y gaseosas. Por ser una teoría macroscópica, es decir, aplicable solo a un número muy grande de partículas y a distancias grandes respecto de las dimensiones de estas, el electromagnetismo no describe los fenómenos atómicos y moleculares, para los que es necesario usar la mecánica cuántica.
-El electromagnetismo es considerado como una de las cuatro fuerzas fundamentales del universo actualmente conocido.</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Ferrofluid_poles.jpg" style="width:950px;height:500px;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Magnet0873.png" style="width:950px;height:500px;">
-</div>
+	</div>
 
-</div>
+	</div>
+
+<%else%>
+
+	<div class="row" style="margin-top: 50px">
+	<div class="col s10 offset-s1">
+	<p>Lo sentimos, pero la busqueda no arrojó contenidos</p>
+	</div>
+	</div>
+<%end%>
+
+
+<script type="text/javascript">
+	alert("Materia agregada con éxito")
+
+</script>

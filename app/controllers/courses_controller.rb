@@ -2,6 +2,7 @@ class CoursesController < ApplicationController
 	before_action :has_student_permission?, only: [:show_to_student, :student_index, :enrollm, :show_enrolled]
 	before_action :has_teacher_or_expert_permission?, only: [:index, :create, :show, :update, :new]
 	before_action :set_course, only: [:show, :update, :destroy, :show_to_student, :enroll, :show_enrolled]
+	before_action :has_student_permission?, only: [:show_to_student]
 
 	def index
 		@courses = current_user.enabled_courses
@@ -72,6 +73,7 @@ class CoursesController < ApplicationController
 	def search
 
 		@courses = Course.search(params["search"])
+		@contents = Content.search(params["search"])
 
 	end
 

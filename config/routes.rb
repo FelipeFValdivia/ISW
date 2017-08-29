@@ -30,9 +30,10 @@ Rails.application.routes.draw do
       post "/enroll", to: "courses#enroll"
       get "/show_to_student", to: "courses#show_to_student"
       get "/content/new", to: "contents#new"
-      get "/content/show/:content_id", to: "contents#show", as: "show_content"
+      get "/content/:content_id", to: "contents#show", as: "show_content"
       post "/content/create", to: "contents#create"
       put "/content/update", to: "contents#update"
+      get "/content/:content_id/show_to_student", to: "contents#show_to_student", as: "show_content_to_student"
     end
   end
 

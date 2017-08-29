@@ -38,6 +38,12 @@ gem 'devise'
 gem "paperclip", "~> 5.0.0"
 gem 'best_in_place', '~> 3.0.1'
 gem  'wikipedia-client'
+gem "dbpedia"
+gem "sparql-client" # if you want to use sparql
+gem 'google-api-client', '~> 0.11'
+gem 'google-search'
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

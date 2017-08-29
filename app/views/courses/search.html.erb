@@ -29,4 +29,32 @@
     </table>
   </div>
 
+  <div class="row">
+    <h4 class="col s10 offset-s1">Contenidos</h4>
+
+    <table class="highlight col s10 offset-s1">
+      <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Curso</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%@contents.each do |content|%>
+          <tr>
+            <td><%=content.name%></td>
+            <td><%=content.course.name%></td>
+            <td>
+              <%=link_to( controller: 'contents', action: 'show_to_student', id: content.course.id, content_id: content.id) do%>
+                <i class="edit-icons material-icons tiny">search</i>
+              <%end%>
+            </td>
+          </tr>
+        <%end%>
+
+      </tbody>
+    </table>
+  </div>
+
 </div>
